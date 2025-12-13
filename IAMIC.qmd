@@ -46,11 +46,11 @@ bibliography:
    - bib/wikidata.bib
 ---
 
-In 2020, we studied the effect of increasingly AI-driven streaming platforms on the Slovak music repertoire. We realised that music is being recommended by algorithms, not only to subscribers of YouTube or Spotify but also to radio editors, concert promoters and festival organisers. This led to the conclusion that rights management organisations (CMOs) and music information centres (MICs) must improve their practices to remain competitive and visible.
+In 2020, we studied the effect of increasingly AI-driven streaming platforms on the Slovak music repertoire. We realised that music is being recommended by algorithms, not only to YouTube or Spotify subscribers but also to radio editors, concert promoters, and festival organisers. We realised that rights management organisations (CMOs), music information centres (MICs), and music libraries, archives, and documentation centres (MLs) must change their practices to remain competitive and visible.
 
 ![Download our feasibility study from [@antal_promoting_slovak_2020].](png/omo/20240605_D_Antal_Dataweek_OMO_3.png){width="80%" fig-align="center"}
 
-In the Open Music Europe project[^1], we are building a data infrastructure that aims to coordinate music knowledge (in our demonstration example, Slovak music) stored in various institutional silos and systems. We wanted to “plug in” the database of the MIC Slovak Music Centre (MCS) into a global data system like Wikipedia or Spotify and, at the same time, connect it with the Slovak CMO SOZA and public libraries. This process is overseen by a data science company, Reprex.
+In the Open Music Europe project[^1], we are building a data infrastructure that aims to coordinate music knowledge (in our demonstration example, Slovak music) stored in various institutional silos and systems. We wanted to “plug in” the database of the MIC Slovak Music Centre (MCS) into a global data system like Wikipedia or Spotify and, at the same time, connect it with the Slovak CMO SOZA, the Slovak National Library and the music section of the ML Bratislava City Library. A data science company, Reprex, oversees this process.
 
 [^1]: This project has received funding from the European Union’s Horizon Europe, research and innovation programme, under Grant Agreement No. 101095295 (Open Music Europe (OpenMusE) – An Open, Scalable, Data-to-Policy Pipeline for European Music Ecosystems [@openmuse_2023]). Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
 
