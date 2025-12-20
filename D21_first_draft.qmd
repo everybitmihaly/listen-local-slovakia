@@ -5,6 +5,7 @@ project:
   type: website
   output-dir: docs
 editor: source
+version: "0.2.0"
 format: 
    html: 
      toc: true
@@ -13,45 +14,46 @@ format:
    epub: 
      toc: true
      toc-depth: 3
+     output-file: music-heritage-policy-ai_v0_3.epub
      citation-style: chicago-author-date.csl
    docx: 
+     toc-depth: 2 
      citation-style: chicago-author-date.csl
+     output-file: music-heritage-policy-ai_v0_3.docs
    pdf:
     colorlinks: true
     toc: true
     toc-depth: 3
+    output-file: music-heritage-policy-ai_v0_3.pdf
     latex: 
        - lof: true
 
-doi: 10.5281/zenodo.17759777
+doi: 10.5281/zenodo.17922390
 
 papersize: A4
 
 bibliography:
   - bib/antal.bib
-  - bib/atom.bib
-  - bib/artefacts.bib
-  - bib/automation.bib
   - bib/datagovernance.bib
   - bib/datainteroperability.bib
   - bib/datamodels.bib
   - bib/decolonisation.bib
   - bib/eccch.bib
+  - bib/eulaw.bib
   - bib/eupolicies.bib
   - bib/eXtremeDesign.bib
   - bib/finnougric.bib
   - bib/ISOdata.bib
-  - bib/lexicography.bib
   - bib/livonians.bib
   - bib/metadata.bib
   - bib/dataspace.bib
   - bib/ontologies.bib
   - bib/OpenMuse.bib
   - bib/privatelyhelddata.bib
-  - bib/setomaa.bib
   - bib/textilebase.bib
   - bib/wikidata.bib
   - bib/trustworthyAI.bib
+  - bib/opa.bib
   - bib/OpenMusE.bib
 ---
 
@@ -64,6 +66,28 @@ This paper presents the *Slovak Comprehensive Music Database* (SKCMDb) as a conc
 The paper situates SKCMDb within a broader ecosystem of interoperable modules, including the *Hungarian Music Database* and community-curated Livonian and Karelian music databases, illustrating how subsidiarity can be implemented across national, community, and supra-national levels. Methodologically, the work combines linked-data modelling, modular ontologies, and provenance-aware workflows with lightweight publication strategies.
 
 An empirical case study based on 156 weeks of official Slovak music charts demonstrates how local content indicators can be computed reproducibly and transparently using authoritative reference data, without monitoring individual broadcasters. The results illustrate the feasibility of diversity-aware cultural policy infrastructures that support voluntary compliance, editorial decision-making, and comparative analysis. The paper concludes by outlining implications for European data governance, cultural policy, and the future development of the Open Music Observatory as a prototype European Music Observatory.
+
+::: callout-note
+This is an early draft of the D2.1 deliverable of the Open Music Europe consortium. It has not been approved, amended, consulted with many contributors, and therefore it is not intended for use or citation. We make this version available in compliance with the Open Policy Analysis guidelines. The latest working copy is available [here](https://downloads.reprex.nl/2025/omo-diversity-pillar/D21_first_draft.html).
+
+**Transparency note**: Importantly, this document does not present a purely conceptual or speculative policy design. Substantial parts of the analysis synthesis lessons from policy-embedded implementation activities carried out using *Open Policy Analysis* methods[^1], including openly documented data, code, workflows, and methodological decisions. These implementations were conducted in cooperation with public authorities and sectoral institutions, allowing the Green Paper to reflect not only policy aspirations but also the practical constraints and opportunities observed in real-world deployment.
+
+Following the principles of **Open Policy Analysis**, all related deliverables and technical documentation are publicly accessible to foster broad engagement and ensure a clear audit trail. Supporting documents for each chapter of this Green Paper are referenced in similar boxes. The current version (and future White Paper drafts) is available at <https://zenodo.org/records/17075796>. Standardised folders, figures, and bibliographies are available at <https://github.com/dataobservatory-eu/open-music-data-white-paper>.
+
+Please note that this document puts the Open Music Observatory, a prototype of a modern European Music Observatory developed by the OpenMusE consortium, which is being currently populated with economy, diversity, society, innovation data and has already three federated modules, can reviewed in the [technical documentation](https://downloads.reprex.nl/2025/open-music-observatory/) (see versioned [Zenodo DOIs](https://zenodo.org/records/17681323)), our viewn on the [temporary landing page](https://dataobservatory-eu.github.io/omo-landing-page/).
+
+**Funding acknowledgement:** This project has received funding from the European Union’s Horizon Europe programme under Grant Agreement No. [101095295](https://cordis.europa.eu/project/id/101095295). The views expressed are those of the authors only and do not necessarily reflect those of the European Commission or its agencies[^2].
+
+**Citation note:** When citing this document, please use the latest **versioned DOI** available on Zenodo (current version: [10.5281/zenodo.17922390](https://zenodo.org/records/17922390)), and include the date of access if referring to material hosted on our GitHub repository.[^3] This is an early 0.1.0 version.)
+:::
+
+[^1]: The *Guidelines for Open Policy Analysis* form an actionable and practical set of directives that the OpenMusE consoritum was mandated to use under the Grant Agreement. It can be seen as good implementation framework for *Evidence-based policy making in the European Commission* and *The practice of reproducible research* [@opa_guidelines; @openmuse_2023; [@evidence_based_policy_eu_2015; @practice_of_reproducible_research_2018].
+
+[^2]: This document has been prepared by *Open Music Europe* (OpenMusE) project partners as an account of work carried out within the framework of this contract. Any dissemination of results must indicate that it reflects only the author’s view and that the Commission Agency is not responsible for any use that may be made of the information it contains. Neither Project Coordinator, nor any signatory party of *Open Music Europe (OpenMusE) Project Consortium Agreement*, nor any person acting on behalf of any of them:\
+    (a) makes any warranty or representation whatsoever, express or implied, (i) with respect to the use of any information, apparatus, method, process, or similar item disclosed in this document, including merchantability and fitness for a particular purpose, or (ii) that such use does not infringe on or interfere with privately owned rights, including any party's intellectual property, or (iii) that this document is suitable to any particular user's circumstance; or\
+    (b) assumes responsibility for any damages or other liability whatsoever (including any consequential damages, even if advised of the possibility) resulting from your selection or use of this document or any information, apparatus, method, process, or similar item disclosed herein.
+
+[^3]: Always use the latest versioned DOI when citing this document, available via Zenodo. If you rely on supporting material hosted in the GitHub repository, please add the date of access in your reference.
 
 ## Introduction {#sec-introduction}
 
@@ -87,9 +111,9 @@ This paper proceeds as follows. @sec-feasibility summarises the findings of the 
 
 ## Findings of the Feasibility Phase {#sec-feasibility}
 
-The *Feasibility Study On Promoting Slovak Music In Slovakia & Abroad*[^1] identified a persistent and structural gap between the normative ambitions of cultural policy and the operational realities of music dissemination. While local content quotas and diversity objectives are typically articulated in legal or institutional terms, they are rarely accompanied by a technical or methodological framework that would allow their consistent application in everyday editorial practice. This gap was not merely practical, but conceptual: policy definitions often relied on categories that could not be coherently mapped onto the objects actually circulated by media platforms.
+The *Feasibility Study On Promoting Slovak Music In Slovakia & Abroad*[^4] identified a persistent and structural gap between the normative ambitions of cultural policy and the operational realities of music dissemination. While local content quotas and diversity objectives are typically articulated in legal or institutional terms, they are rarely accompanied by a technical or methodological framework that would allow their consistent application in everyday editorial practice. This gap was not merely practical, but conceptual: policy definitions often relied on categories that could not be coherently mapped onto the objects actually circulated by media platforms.
 
-[^1]: The study was published in English as *Feasibility Study On Promoting Slovak Music In Slovakia & Abroad* and *Projektová štúdia propagácie slovenskej hudby na Slovensku a v zahranicí* in Slovak [@antal_promoting_slovak_2020; @antal_promoting_slovak_2020-SK].
+[^4]: The study was published in English as *Feasibility Study On Promoting Slovak Music In Slovakia & Abroad* and *Projektová štúdia propagácie slovenskej hudby na Slovensku a v zahranicí* in Slovak [@antal_promoting_slovak_2020; @antal_promoting_slovak_2020-SK].
 
 A central finding concerned the mismatch between **persons** and **cultural artefacts**. Radio stations, streaming platforms, and broadcasters do not distribute composers or performers as such; they distribute recorded fixations of performances, that is, sound recordings. These recordings are cultural artefacts that do not themselves possess personal characteristics. Yet many quota systems implicitly assume that attributes of persons—such as nationality, age, gender identity, ethnicity, or place of residence—can be directly ascribed to the recordings through which music is communicated to the public. This assumption breaks down both conceptually and legally.
 
@@ -109,11 +133,18 @@ This conclusion marked a decisive reframing of the problem. Local content and di
 
 ## Policy Context and the European Data Governance Agends {#sec-policy}
 
-The implementation of the **Slovak Comprehensive Music Database** (available at [https://hudobnadatabaza.sk/](https://hudobnadatabaza.sk/en/)), HUNDB (available at ), the **Finno-Ugric Data Sharing Space** (available at [https://finnougric.net/](https://finnougric.net/en/)) coincided with a broader shift in European policy thinking on data governance, artificial intelligence, and cultural infrastructures. Over the past decade, it has become increasingly clear that Europe’s capacity to pursue cultural, social, and economic objectives in the digital domain depends less on isolated regulatory instruments and more on the availability of trustworthy, interoperable data infrastructures. This shift is reflected in the *European Data Strategy*, the *Data Governance Act*[^2], and the growing emphasis on sectoral data spaces as instruments of public policy.
+The implementation of the **Slovak Comprehensive Music Database** (available at [https://hudobnadatabaza.sk/](https://hudobnadatabaza.sk/en/)), HUNDB (available at ), the **Finno-Ugric Data Sharing Space** (available at [https://finnougric.net/](https://finnougric.net/en/)) coincided with a broader shift in European policy thinking on data governance, artificial intelligence, and cultural infrastructures. Over the past decade, it has become increasingly clear that Europe’s capacity to pursue cultural, social, and economic objectives in the digital domain depends less on isolated regulatory instruments and more on the availability of trustworthy, interoperable data infrastructures. This shift is reflected in the *European Data Strategy*, the *Data Governance Act*[^5], and the growing emphasis on sectoral data spaces as instruments of public policy.
 
-[^2]: *Regulation (EU) 2022/868 of the European Parliament and of the Council of 30 May 2022 on European data governance and amending Regulation (EU) 2018/1724* (Data Governance Act) [@regulation_dga_2022_868]
+[^5]: *Regulation (EU) 2022/868 of the European Parliament and of the Council of 30 May 2022 on European data governance and amending Regulation (EU) 2018/1724* (Data Governance Act) [@regulation_dga_2022_868]
 
 In the cultural and creative sectors, this transformation has been driven in part by the rapid platformisation of music distribution and discovery. Recommendation systems, analytics pipelines, and increasingly generative AI models now mediate access to cultural content at a global scale. These systems rely on metadata that is often incomplete, inconsistent, or governed by commercial incentives that do not align with public-interest objectives. As a result, cultural policy goals—such as diversity, linguistic plurality, gender balance, or local content promotion—are difficult to articulate, let alone enforce, within algorithmic environments dominated by non-European actors.
+
+[!["Recognising the EU’s supporting role in the field of culture, this declaration affirms shared political commitments and responsibilities of the European Parliament, the Council of the European Union and the European Commission - within their respective competencies and in full compliance with EU law - based on the key directions set out in the Commission’s 2025 Culture Compass for Europe."](png/eupolicies/Draft_Joint_Declaration_Europe_for_Culture_6x4.png){width="100%" fig-align="center"}](https://culture.ec.europa.eu/sites/default/files/2025-11/Draft%20Joint%20Declaration%20-%20Europe%20for%20Culture%20with%20cover_0.pdf)
+
+> 2\. Cultural and linguistic diversity are fundamental values on which the EU is founded. We commit to:\
+> • Supporting, celebrating and preserving the rich cultural and linguistic diversity of the European Union and its cultural sovereignty.\
+> • Promoting the full diversity of cultural content created in Europe, notably online and harnessing new technologies to ensure the visibility and discoverability of this content.\
+> *Draft Joint Declaration "Europe for Culture — Culture for Europe"* [@eu_culture_compass_joint_declaration_draft_2025]
 
 Against this backdrop, diversity quotas and local content regulations can no longer be understood as standalone cultural policy tools. Instead, they function as **stress tests** for Europe’s data governance ambitions. If a policy goal cannot be expressed in machine-readable terms, evaluated using auditable data sources, and implemented without violating fundamental rights, it risks becoming symbolic rather than effective. The monitoring and enforcement gaps identified in earlier quota systems thus foreshadowed a more general problem: the absence of shared reference infrastructures capable of mediating between policy intent, data protection law, and algorithmic practice.
 
@@ -121,13 +152,13 @@ European institutions have increasingly recognised this challenge. Rather than a
 
 Within this framework, the principle of subsidiarity acquires renewed significance. Cultural identity, heritage, and creative production are deeply contextual and cannot be meaningfully governed through purely centralised mechanisms. At the same time, national solutions alone are insufficient in a digital environment characterised by cross-border circulation, global platforms, and transnational audiences. European data governance therefore requires **multi-level infrastructures** that operate simultaneously at community, national, and supra-national scales, without collapsing these levels into a single point of control.
 
-In the Slovak context, this governance logic was formalised through a *Memorandum of Understanding* between the Ministry of Culture, its analytical unit (IKP), and the OpenMuse consortium, which later served as the basis for extended cooperation with the Slovak Music Centre, the Music Fund, and eventually the Slovak National Library. The MoU does not regulate data transfer or policy authority; instead, it establishes a framework for open policy analysis, methodological transparency, and non-exclusive institutional cooperation, allowing each participating institution to retain its legal competences and data stewardship responsibilities[^3].
+In the Slovak context, this governance logic was formalised through a *Memorandum of Understanding* between the Ministry of Culture, its analytical unit (IKP), and the OpenMuse consortium, which later served as the basis for extended cooperation with the Slovak Music Centre, the Music Fund, and eventually the Slovak National Library. The MoU does not regulate data transfer or policy authority; instead, it establishes a framework for open policy analysis, methodological transparency, and non-exclusive institutional cooperation, allowing each participating institution to retain its legal competences and data stewardship responsibilities[^6].
 
-[^3]: *Memorandum o porozumení o využití výsledkov analýz otvorených politík v kontexte slovenského kultúrneho a kreatívneho priemyslu a sektorových verejných politík v spolupráci s konzorciom pre výskum a inovácie s názvom OpenMuse*. \[Memorandum of Understanding on utilizing the Open Policy Analysis results of the OpenMuse Research and Innovation Consortium in the context of Slovak cultural and creative industries and sectors' public policies\] [@open_music_europe_sk_mou_2023]
+[^6]: *Memorandum o porozumení o využití výsledkov analýz otvorených politík v kontexte slovenského kultúrneho a kreatívneho priemyslu a sektorových verejných politík v spolupráci s konzorciom pre výskum a inovácie s názvom OpenMuse*. \[Memorandum of Understanding on utilizing the Open Policy Analysis results of the OpenMuse Research and Innovation Consortium in the context of Slovak cultural and creative industries and sectors' public policies\] [@open_music_europe_sk_mou_2023]
 
-In Hungary, a comparable level of centralised coordination could not be achieved at the outset. As a result, the Hungarian implementation followed a deliberately bottom-up trajectory. Building on the Slovak template and its early public articulation in conference presentations, the Hungarian work progressed through a series of bilateral agreements, exploratory workshops, and open professional discussions with individual institutions. This process involved sustained dialogue with archival, heritage, and research actors, rather than a single coordinating authority. While slower and more fragmented, this bottom-up approach proved well suited to the Hungarian institutional landscape and ultimately produced a governance structure aligned with local capacities, traditions, and trust relationships. In this sense, the divergence between the Slovak and Hungarian governance paths is not a deviation from the shared architectural vision, but an expression of the subsidiarity principle in practice[^4].
+In Hungary, a comparable level of centralised coordination could not be achieved at the outset. As a result, the Hungarian implementation followed a deliberately bottom-up trajectory. Building on the Slovak template and its early public articulation in conference presentations, the Hungarian work progressed through a series of bilateral agreements, exploratory workshops, and open professional discussions with individual institutions. This process involved sustained dialogue with archival, heritage, and research actors, rather than a single coordinating authority. While slower and more fragmented, this bottom-up approach proved well suited to the Hungarian institutional landscape and ultimately produced a governance structure aligned with local capacities, traditions, and trust relationships. In this sense, the divergence between the Slovak and Hungarian governance paths is not a deviation from the shared architectural vision, but an expression of the subsidiarity principle in practice[^7].
 
-[^4]: Presented at the annual conference of library and GLAM information management conference, the A szlovák adatkicserélési tér magyarországi föderációjának lehetőségei [@antal_hungarnet_2024] was followed by numerous bilateral and open professional forums.
+[^7]: Presented at the annual conference of library and GLAM information management conference, the A szlovák adatkicserélési tér magyarországi föderációjának lehetőségei [@antal_hungarnet_2024] was followed by numerous bilateral and open professional forums.
 
 A comparable but more radical application of this logic underpins the *Finno-Ugric Data Sharing Space*, which includes community-curated databases for Livonian and Karelian musical heritage. In these cases, the institutional depth of a nation state—such as that available in Slovakia or Hungary—is largely absent. Livonian and Karelian heritage is preserved by a small number of dedicated regional GLAM institutions, research centres, NGOs, and community organisations, including the Livonian Institute.
 
@@ -135,17 +166,21 @@ Under these conditions, a centrally coordinated governance model would be neithe
 
 From a policy perspective, the *Finno-Ugric Data Sharing Space* functions as a subsidiarity and epistemic-justice stress test for European data governance concepts. Unlike the Slovak or Hungarian cases, it operates largely outside state-scale cultural infrastructures and engages communities whose heritage has historically been documented, classified, and interpreted through external—often post-imperial—institutional frameworks. This makes it particularly relevant for assessing whether European principles such as federation, non-extractive reuse, governance-by-design, and respect for cultural and linguistic diversity can be operationalised in low-scale cultural ecosystems.
 
-At the same time, the turn toward Finno-Ugric heritage was motivated by a pragmatic methodological consideration. While the Slovak and Hungarian implementations aimed for broad coverage across hundreds of thousands of works and recordings, such scale makes it difficult to observe, test, and refine governance and modelling assumptions in a controlled manner. By contrast, Livonian and related Finno-Ugric repertoires can be described using hundreds rather than hundreds of thousands of items. This reduced scale enables exhaustive modelling, close inspection of provenance and rights statements, and direct community engagement, providing a conceptually tractable environment in which architectural and governance choices can be stress-tested before being applied to larger national or pan-European systems.
+![See our [original poster](https://zenodo.org/records/15382553) in [Digital Humanities in the Nordic and Baltic Countries (DHNB 2025)](https://dhnb.eu/conferences/dhnb2025/), Tartu, 5-7 March 2025, and the subsequent paper in the following footnote.](png/fuds/fudss_tartu_slide_03.PNG){fig-align="center"}
+
+At the same time, the turn toward Finno-Ugric heritage was motivated by a pragmatic methodological consideration. While the Slovak and Hungarian implementations aimed for broad coverage across hundreds of thousands of works and recordings, such scale makes it difficult to observe, test, and refine governance and modelling assumptions in a controlled manner. By contrast, Livonian and related Finno-Ugric repertoires can be described using hundreds rather than hundreds of thousands of items. This reduced scale enables exhaustive modelling, close inspection of provenance and rights statements, and direct community engagement, providing a conceptually tractable environment in which architectural and governance choices can be stress-tested before being applied to larger national or pan-European systems[^8].
+
+[^8]: See our accepted paper in preprint: *Federating Open Knowledge through Wikibase: The Case of The Finno-Ugric Data Sharing Space* and the original poster presentation *A Finno-Ugric Data Sharing Space* [@fudss_preprint; @finnougric_2025]
 
 In this sense, the Finno-Ugric module is neither peripheral nor exceptional. It functions as a *conceptual*and *methodological laboratory* for European data-space design, demonstrating how principles developed under conditions of maximal institutional fragmentation and linguistic diversity can inform the construction of scalable, trustworthy infrastructures in more complex cultural ecosystems. By enabling communities to participate in the repair, contextualisation, and reuse of authoritative cultural data without recentralising control, the module aligns European data-space logic with commitments to non-discrimination, proportionality, and fundamental cultural rights.
 
 These implementations were not developed in isolation from European policy processes. From an early stage, they were informed by, and contributed to, discussions within the *Copyright Infrastructure Task Force* (CITF), an expert forum established by several EU Member States to promote the standardization and interoperability of copyright data, particularly in the context of Artificial Intelligence (AI) and cultural heritage. CITF functions as an intermediary space between policy formulation and operational practice, highlighting concrete interoperability, rights, and governance challenges encountered by cultural institutions in the digital environment. The Slovak, Hungarian, and Finno-Ugric implementations can be understood as applied responses to these shared problem framings, testing how CITF-level recommendations could be translated into working infrastructures under different institutional conditions.
 
-The problem framing that later crystallised within the *Copyright Infrastructure Task Force*, and its first report[^5], ad already been articulated at European level in earlier analytical work on copyright data and new technologies[^6], which identified metadata fragmentation, governance asymmetries, and AI-driven reuse as structural challenges rather than sector-specific anomalies.
+The problem framing that later crystallised within the *Copyright Infrastructure Task Force*, and its first report[^9], ad already been articulated at European level in earlier analytical work on copyright data and new technologies[^10], which identified metadata fragmentation, governance asymmetries, and AI-driven reuse as structural challenges rather than sector-specific anomalies.
 
-[^5]: *Interoperable, Trustworthy, and Machine-Readable Copyright Data in the AI Era: Report of the CITF First Project* [@citf_2025]
+[^9]: *Interoperable, Trustworthy, and Machine-Readable Copyright Data in the AI Era: Report of the CITF First Project* [@citf_2025]
 
-[^6]: *Study on copyright and new technologies – Copyright data management and artificial intelligence* [@study_on_copyright_new_technologies_2022]
+[^10]: *Study on copyright and new technologies – Copyright data management and artificial intelligence* [@study_on_copyright_new_technologies_2022]
 
 ![](png/iamic/01_Slides_D_Antal_IAMIC_20241121.png){fig-align="center"}
 
@@ -153,15 +188,19 @@ Our approach presented here was co-presented jointly with the Slovak Music Centr
 
 We presented and discussed these ideas jointly with the Slovak Music Centre at the *International Association of Music Libraries, Archives and Documentation Centers* (IAML) General Assembly and Annual Conference (Salzburg, 7–9 July 2025), within the “Future Libraries” session and the poster session. See the presentation and poster format [@skcmdb_iaml_presentation_2025; @skcmdb_iaml_poster_2025]. The discussion focused on the role of national music libraries and documentation centres as data stewards within federated cultural data spaces. Feedback from IAML participants contributed to clarifying the library-oriented replication pathway and helped accelerate the otherwise slow Hungarian replication process, supported by the positive reception of IAMIC Hungary. The exchange also identified potential future replication interest in Portugal, Finland, and Denmark, although these initiatives are likely to materialise beyond the timeline of the Open Music Europe project.
 
-Our work was also presented at the CISAC European Committee Meeting as *OpenMusE: Towards a Sustainable Licensing Market for AI Use of Protected Works* in Vilnius, on 29 April 2025. [@openmuse_cisac_ec_2025]
+![CISAC European Committee Meeting as *OpenMusE: Towards a Sustainable Licensing Market for AI Use of Protected Works* in Vilnius, on 29 April 2025.](png/cisac/20250427_CISAC_EC_2025_OpenMusE_2x1.png){fig-align="center"}
 
-Building directly on the practical experience gained through the Slovak, Hungarian, and Finno-Ugric implementations, within the Open Music Europe consortium we subsequently developed a **Green Paper** addressing data gaps, governance challenges, and interoperability needs in the European music sector[^7]. The Green Paper should be understood as a reflective synthesis of implementation experience rather than a source of technical or policy requirements. The preparation and release of the *Green Paper* followed the principles of Open Policy Analysis, with early publication, open consultation, and full traceability of data, methods, and supporting documentation.
+Our work was also presented at the CISAC European Committee Meeting as *OpenMusE: Towards a Sustainable Licensing Market for AI Use of Protected Works* in Vilnius, on 29 April 2025 [@openmuse_cisac_ec_2025] in comparison with similar metadata governance and repair initiatives from several countries.
 
-[^7]: *A Green Paper on AI, Data Governance, and Metadata Policies for Europe's Music Ecosystem* [@open_music_greenpaper].
+Recent discussions within the European cultural heritage sector further underline the importance of provenance-aware data governance in the age of AI. A joint *Impulse Paper* by the Open Future Foundation and the Europeana Foundation examines how cultural heritage institutions can navigate large-scale data publishing and AI reuse while preserving public accountability, authority, and trust. It highlights that, once cultural data enters automated and AI-driven environments, incomplete or degraded provenance is no longer a marginal archival issue but a structural risk that shapes downstream use at scale. While the focus of that work is cross-domain, its conclusions closely resonate with the challenges observed in music, reinforcing the need to treat authority control, attribution, and lifecycle-aware governance as core infrastructural concerns rather than sector-specific exceptions. [@publishing_CHD_AI_2025]
 
-The *Green Paper* draws in part on the Slovak, Hungarian, and Finno-Ugric cases presented here, situating them within a wider European policy discussion. It was prepared in consultation with more than ten national and pan-European stakeholders and followed the *Open Policy Guidelines* as a measure of transparency and quality control[^8]. Rather than repeating its findings here, we treat the Green Paper as a complementary policy artefact that reflects back on the kinds of implementation-level lessons documented in this paper and connects them to ongoing European debates on data spaces, AI governance, and cultural policy.
+Building directly on the practical experience gained through the Slovak, Hungarian, and Finno-Ugric implementations, within the Open Music Europe consortium we subsequently developed a **Green Paper** addressing data gaps, governance challenges, and interoperability needs in the European music sector[^11]. The Green Paper should be understood as a reflective synthesis of implementation experience rather than a source of technical or policy requirements. The preparation and release of the *Green Paper* followed the principles of Open Policy Analysis, with early publication, open consultation, and full traceability of data, methods, and supporting documentation.
 
-[^8]: The *Guidelines for Open Policy Analysis* form an actionable and practical set of directives that the OpenMusE consoritum was mandated to use under the Grant Agreement. It can be seen as good implementation framework for *Evidence-based policy making in the European Commission* and *The practice of reproducible research* [@opa_guidelines; @openmuse_2023; @evidence_based_policy_eu_2015; @practice_of_reproducible_research_2018].
+[^11]: *A Green Paper on AI, Data Governance, and Metadata Policies for Europe's Music Ecosystem* [@open_music_greenpaper].
+
+The *Green Paper* draws in part on the Slovak, Hungarian, and Finno-Ugric cases presented here, situating them within a wider European policy discussion. It was prepared in consultation with more than ten national and pan-European stakeholders and followed the *Open Policy Guidelines* as a measure of transparency and quality control[^12]. Rather than repeating its findings here, we treat the Green Paper as a complementary policy artefact that reflects back on the kinds of implementation-level lessons documented in this paper and connects them to ongoing European debates on data spaces, AI governance, and cultural policy.
+
+[^12]: The *Guidelines for Open Policy Analysis* form an actionable and practical set of directives that the OpenMusE consoritum was mandated to use under the Grant Agreement. It can be seen as good implementation framework for *Evidence-based policy making in the European Commission* and *The practice of reproducible research* [@opa_guidelines; @openmuse_2023; @evidence_based_policy_eu_2015; @practice_of_reproducible_research_2018].
 
 Taken together, CITF provided a shared space for problem articulation, the national and community implementations provided practical stress tests under conditions of subsidiarity, and the Green Paper served as a mechanism to feed these lessons back into the European policy discourse.
 
@@ -177,9 +216,9 @@ The methodological choices underpinning the *Slovak Comprehensive Music Database
 
 A first foundational decision concerned the use of **linked data** rather than flat relational models. Given the need to reconcile sound recordings, musical works, identifiers, rights information, and selected cultural attributes across multiple domains, a graph-based representation offered the necessary expressive power. At the same time, we deliberately avoid the term “linked open data”. While the graphs produced are richly interlinked, many of the links point to data sources subject to business confidentiality, rights management restrictions, or data protection law. Openness in this context therefore refers to interoperability and transparency of method, rather than indiscriminate public exposure of underlying data.
 
-The design of SKCMDb was further informed by the European Interoperability Framework (EIF), which provides a multi-layered model for aligning systems across legal, organisational, semantic, and technical dimensions[^9]. Although EIF was originally developed for public-sector interoperability, its logic proved highly relevant for a mixed cultural ecosystem in which public institutions, collective management organisations, private platforms, archives, and community initiatives coexist. Applying EIF in this context required adaptation rather than direct adoption.
+The design of SKCMDb was further informed by the European Interoperability Framework (EIF), which provides a multi-layered model for aligning systems across legal, organisational, semantic, and technical dimensions[^13]. Although EIF was originally developed for public-sector interoperability, its logic proved highly relevant for a mixed cultural ecosystem in which public institutions, collective management organisations, private platforms, archives, and community initiatives coexist. Applying EIF in this context required adaptation rather than direct adoption.
 
-[^9]: Commission Implementing Decision (EU) 2017/1348 of 25 July 2017 on the interoperability framework for European public services (European Interoperability Framework) [@eif_2017_1348]
+[^13]: Commission Implementing Decision (EU) 2017/1348 of 25 July 2017 on the interoperability framework for European public services (European Interoperability Framework) [@eif_2017_1348]
 
 Legal interoperability had to accommodate GDPR and sector-specific rights regimes; organisational interoperability had to reflect the distributed competences of cultural and rights-holding institutions; semantic interoperability had to balance shared meaning with national and community-specific vocabularies; and technical interoperability had to remain sufficiently lightweight to support experimentation and replication.
 
@@ -199,13 +238,13 @@ These abstract methodological principles were operationalised through a **plural
 
 The Hungarian replication initially followed a similar library-science orientation, but institutional and historical factors soon redirected the methodology toward a more archival emphasis. Hungary’s strong ethnomusicological tradition, extending back to Bartók and Kodály, and the concurrent development of public collections for popular music foregrounded archival recovery and contextualisation. The introduction of the Records in Contexts (RiC) model further reinforced this shift, enabling archival entities to interoperate with library and museum data without collapsing epistemological distinctions.
 
-This archival turn also aligns with concerns identified earlier at European level regarding the role of heritage collections in the context of artificial intelligence and large-scale content reuse. The *Study on Copyright and New Technologies* highlighted that archival and heritage institutions hold uniquely authoritative and provenance-rich materials, yet often lack interoperable metadata structures and sufficiently clear rights statements to participate safely in AI-driven environments without exposing rightsholders, performers, or source communities to new legal and ethical risks [@study_copyright_new_technologies_2021]. In this sense, the Hungarian emphasis on archival recovery and contextualisation can be understood not only as a response to national institutional history, but as an applied answer to a broader European problem framing: how to render culturally significant collections computable, interoperable, and legally robust under conditions of automated reuse.
+This archival turn also aligns with concerns identified earlier at European level regarding the role of heritage collections in the context of artificial intelligence and large-scale content reuse. The *Study on Copyright and New Technologies* highlighted that archival and heritage institutions hold uniquely authoritative and provenance-rich materials, yet often lack interoperable metadata structures and sufficiently clear rights statements to participate safely in AI-driven environments without exposing rightsholders, performers, or source communities to new legal and ethical risks [@study_on_copyright_new_technologies_2022]. In this sense, the Hungarian emphasis on archival recovery and contextualisation can be understood not only as a response to national institutional history, but as an applied answer to a broader European problem framing: how to render culturally significant collections computable, interoperable, and legally robust under conditions of automated reuse.
 
 The technical and institutional implications of this archival emphasis are documented in a separate feasibility and design manuscript developed with the Hungarian Heritage House, *Enriching and Futureproofing the Databases of the Hungarian Heritage House: A short feasibility study and early manuscript for publication*, which is the developing manuscript for a separate publiation [@antal_zagyyva_2025] This companion document, maintained as a living specification following the OPA standard in the repository of the [Hungarian Music Database](https://github.com/dataobservatory-eu/humdb), records the concrete archival scope, governance assumptions, and data-modelling constraints encountered in the Hungarian context.
 
 A comparable archival orientation characterised work with Livonian materials in Latvia, in collaboration with the Latvian Archives of Folklore. In both Hungary and Latvia, *epistemological justice and archival interoperability* emerged as decisive methodological concerns. Large portions of musical heritage had not been publicly distributed during periods of Soviet occupation, making the “source” of metadata repair not deficient commercial catalogues but historically constrained archival records. These contexts provided demanding stress tests for both the Heritage Digital Twin Ontology and the broader data-sharing approach, particularly in relation to rights statements and differentiated access regimes.
 
-![![](images/clipboard-360190921.png)Our approach was presented and discussed on DNBH 2025 in Tartu.](png/fuds/fudss_tartu_slide_03.PNG){fig-align="center"}
+![Our approach was presented and discussed on DNBH 2025 in Tartu.](png/fuds/fudss_tartu_slide_03.PNG){fig-align="center"}
 
 Methodologically, the Finno-Ugric work extends this archival orientation beyond state and institutional archives into **community-anchored reconstruction workflows**. Rather than treating archives as authoritative endpoints, the approach treats them as starting points for semantic repair, multilingual enrichment, and participatory validation.
 
@@ -217,17 +256,17 @@ Taken together, these implementations demonstrate that methodological coherence 
 
 Methodological choices were further informed by sustained engagement with open knowledge and semantic web communities, particularly within the Wikimedia ecosystem.
 
-At a methodological level, several of the modelling and governance choices described above were iteratively validated through structured engagement with European research infrastructures, open knowledge communities, and sectoral expert forums. Early alignment focused on semantic modelling and ontological compatibility. In October 2023, a dedicated work session convened by the Polifonia project brought together stakeholders including Podiumkunst.net, the Open Music Observatory, the University of Florence, IC Fonseca School, Joséphine Simonnot/PRISM, Maria Luisa Onida/D'Istruzione Superiore Leonardo Da Vinci, the Carnegie Hall Archive, and the Municipality of Bologna. This consultation played a formative role in refining the modular ontology strategy adopted here[^10], helping to ensure compatibility between scholarly music-knowledge graphs and policy-oriented interoperability requirements, while avoiding premature ontological closure.
+At a methodological level, several of the modelling and governance choices described above were iteratively validated through structured engagement with European research infrastructures, open knowledge communities, and sectoral expert forums. Early alignment focused on semantic modelling and ontological compatibility. In October 2023, a dedicated work session convened by the Polifonia project brought together stakeholders including Podiumkunst.net, the Open Music Observatory, the University of Florence, IC Fonseca School, Joséphine Simonnot/PRISM, Maria Luisa Onida/D'Istruzione Superiore Leonardo Da Vinci, the Carnegie Hall Archive, and the Municipality of Bologna. This consultation played a formative role in refining the modular ontology strategy adopted here[^14], helping to ensure compatibility between scholarly music-knowledge graphs and policy-oriented interoperability requirements, while avoiding premature ontological closure.
 
-[^10]: *The Polifonia Ontology Network: Building a Semantic Backbone for Musical Heritage* [@de_berardinis_polifonia_2023] and *Engineering Ontologies with Patterns – The eXtreme Design Methodology* [@blomqvist_engineering_2016]
+[^14]: *The Polifonia Ontology Network: Building a Semantic Backbone for Musical Heritage* [@de_berardinis_polifonia_2023] and *Engineering Ontologies with Patterns – The eXtreme Design Methodology* [@blomqvist_engineering_2016]
 
-At this stage, we started to record user stories for the design of system competences of the Open Music Europe software ecosystem and the observatory's semantic architecture[^11].
+At this stage, we started to record user stories for the design of system competences of the Open Music Europe software ecosystem and the observatory's semantic architecture[^15].
 
-[^11]: The user stories were placed in an OPA compliant folder on GitHub. This work was not carried on after the initiated grant agreement change, when the WP4 did no longer participate in building open source software for this purpose, but we did not abandon the competency requirements [@ome_user_stories].
+[^15]: The user stories were placed in an OPA compliant folder on GitHub. This work was not carried on after the initiated grant agreement change, when the WP4 did no longer participate in building open source software for this purpose, but we did not abandon the competency requirements [@ome_user_stories].
 
-Subsequently, attention shifted from semantic alignment to questions of governance, federation, and data sovereignty. These issues were discussed in a broader cross-sectoral context at *Dataweek²⁴* in Leuven, within the framework of the *Big Data Value Association* and *Gaia-X*[^12]. Presenting the *Open Music Observatory* and its national modules as an example of a European music dataspace allowed the methodological approach to be evaluated against emerging governance expectations for federated data infrastructures, including principles of subsidiarity, non-extractive reuse, and institutional autonomy. Feedback from this forum directly informed the articulation of the federated data-sharing model described in the present paper.
+Subsequently, attention shifted from semantic alignment to questions of governance, federation, and data sovereignty. These issues were discussed in a broader cross-sectoral context at *Dataweek²⁴* in Leuven, within the framework of the *Big Data Value Association* and *Gaia-X*[^16]. Presenting the *Open Music Observatory* and its national modules as an example of a European music dataspace allowed the methodological approach to be evaluated against emerging governance expectations for federated data infrastructures, including principles of subsidiarity, non-extractive reuse, and institutional autonomy. Feedback from this forum directly informed the articulation of the federated data-sharing model described in the present paper.
 
-[^12]: Jun 5, 2024, [Dataweek²⁴](https://reprex.nl/event/2024-06-05_dataweek_leuven/), Leuven, Belgium.
+[^16]: Jun 5, 2024, [Dataweek²⁴](https://reprex.nl/event/2024-06-05_dataweek_leuven/), Leuven, Belgium.
 
 Our work was presented in the Technology sessions of the *Wikimedia CEE Meeting 2024* (Istanbul) and the *Wikimedia CEE Meeting 2025* (Thessaloniki), as well as at *Wikidata Conf 2025* (online) [@antal_wikimedia_cee_2024; @wikimuseum_2025; @antal_wikidata_conf_2025]. These forums provided a practical testbed for validating modelling choices, editorial workflows, and governance assumptions against large-scale, community-maintained knowledge infrastructures.
 
@@ -242,6 +281,10 @@ This separation is central to the viability of diversity-aware cultural policy u
 Implementing this distinction requires more than a technical design choice. It is precisely the challenge addressed by **legal, organisational, and semantic alignment** under the European Interoperability Framework. The system must be able to lawfully access authoritative data sources, design an organisational workflow that produces a determinate evaluative outcome, and communicate that outcome back into a shared data space using semantics that can be consistently interpreted by diverse actors, including broadcasters, curators, researchers, and media authorities.
 
 In the Slovak context, this workflow is deeply intertwined with rights management. The national data sharing space is organised around SOZA, the collective management organisation with legal competence to identify musical works and connect them to living rightsholders and their heirs. Personal characteristics of composers—such as place of birth, nationality, residence, or ethnicity—are strictly protected under the General Data Protection Regulation and are not accessible for disclosure. As a result, while the evaluative logic is conceptually straightforward, its practical implementation is necessarily mediated by institutional trust and competence.
+
+> 8\. The use, development and governance of artificial intelligence (AI) systems should foster human creativity through a fair human-centric and rights-based approach. It should: respect cultural rights, accessibility, inclusivity and cultural diversity; develop and promote discoverability of European, national and local content; foster competitiveness; counter digital divides; and foster digital inclusion. We commit to:\
+> • Promoting human creation and European cultural and linguistic ligital sovereignty, and addressing ethical risks of biases and cultural homogenisation.\
+> • Protecting intellectual property rights, by addressing the impacts of AI on creators’ remuneration, while embracing innovation. *Draft Joint Declaration "Europe for Culture — Culture for Europe"* [@eu_culture_compass_joint_declaration_draft_2025]
 
 At a high level, the internal evaluation proceeds through a sequence of controlled matches. A sound recording is identified and linked to the musical work it embodies; the work is associated with its composer or composers; and the system evaluates whether any of the relevant personal or work-level characteristics satisfy the applicable quota definition. If at least one criterion is met, the recording is marked as eligible for the purposes of the local content quota. Crucially, the reason for eligibility is never exposed. A composition may qualify because the composer was born in Slovakia, because the composer resides there, or because the lyrics are written in the Slovak language. If any of these conditions are satisfied, all recordings of works by that composer—including co-authored works—are treated as eligible, without disclosing which condition applied.
 

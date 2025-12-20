@@ -1,9 +1,3 @@
----
-editor: 
-  markdown: 
-    wrap: 80
----
-
 # Open Music Slovakia
 
 This is a `public` repository for the Open Music Europe activities in Slovakia.
@@ -81,9 +75,13 @@ The bibliographic references are organised by themese, and they are stored in th
 
 -   `bib/collections.bib`: bibliographic entries for theories and conceptualisations of collections.
 
+-   `bib/datagovernance.bib`: bibliographic entries for data governance.
+
 -   `bib/datamodels.bib`: bibliographic entries for data models.
 
 -   `bib/dataspace.bib`: bibliographic entries for the data (sharing) space concept.
+
+-   `bib/decolonisation.bib`: decolonisation (in a cultural heritage and stewardship context.)
 
 -   `bib/dcat.bib`: bibliographic entries for data catalogues.
 
@@ -97,13 +95,23 @@ The bibliographic references are organised by themese, and they are stored in th
 
 -   `bib/europeana.bib`: bibliographic entries for Europeana-related documents.
 
+-   `bib/eXtremeDesign.bib`: bibliographic entries related to the eXtremeDesign methodology.
+
 -   `bib/identifiers.bib`: bibliographic entries on identifiers and PID policies.
 
 -   `bib/IFPI.bib`: bibliographic entries related to IFPI resources.
 
+-   `bib/ISOdata.bib`: ISO standards related to (music) data.
+
+-   `bib/metadata.bib`: metadata theories and policies.
+
+-   `bib/musicindustry.bib`: bibliographic sources on the music industry.
+
 -   `bib/mme.bib`: Music Moves Europe policy documents bibliography.
 
 -   `bib/livonians.bib`: Bibliography connected to the Livonian Music Database.
+
+-    `bib/opa.bib`: bibliography on the Open Policy Analysis Guidelines.
 
 -   `bib/opendata.bib`: bibliography on the EU open data policies and regulations.
 
@@ -114,6 +122,10 @@ The bibliographic references are organised by themese, and they are stored in th
 -   `bib/ossh.bib`: open-source software and hardware bibliography.
 
 -   `bib/privatelyhelddata.bib` on the coordination of privately held and government statistical data.
+
+-   `bib/sampo.bib` bibliography on the Sampo semantic browser. 
+
+-   `bib/trustworthyAI.bib` bibliography on trustworthy use of artificial intelligence.
 
 -   `bib/wikidata.bib` bibliography on the use of Wikidata and Wikibase.
 
